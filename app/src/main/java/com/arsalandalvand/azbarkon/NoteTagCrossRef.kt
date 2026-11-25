@@ -1,0 +1,19 @@
+package com.arsalandalvand.azbarkon
+
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.Index
+
+@Entity(
+    tableName = "note_tags",
+    primaryKeys = ["noteId", "tagId"],
+    foreignKeys = [
+        ForeignKey(entity = Note::class, parentColumns = ["id"], childColumns = ["noteId"], onDelete = ForeignKey.CASCADE),
+        ForeignKey(entity = Tag::class, parentColumns = ["id"], childColumns = ["tagId"], onDelete = ForeignKey.CASCADE)
+    ],
+    indices = [Index("tagId"), Index("noteId")]
+)
+data class NoteTagCrossRef(
+    val noteId: Int,
+    val tagId: Long
+)
