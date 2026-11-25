@@ -16,3 +16,6 @@ local.properties
 *.hprof
 app/release/
 .claude/
+.idea/deploymentTargetSelector.xml
+.idea/deviceManager.xml
+.idea/appInsightsSettings.xml
